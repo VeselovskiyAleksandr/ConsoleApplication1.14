@@ -1,40 +1,15 @@
-﻿// ConsoleApplication1.14.1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//Урок 14. Задача 1. Реализация шифра Цезаря.
+﻿// ConsoleApplication1.14.5.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+//Урок 14. Задача 3. Валидация IP-адреса.
 
 #include <iostream>
-#include <string>
 #include <locale.h>
 using namespace std;
+
 
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	int n, i;
-	string str, encryptedStr;
-	cout << "\nВведите предложение на английском. ";
-	getline(cin,str);
-	cout << "\nУкажите величину сдвига ";
-	cin >> n;
-	for (i = 0; i < str.length(); i++) {
-		cout << i;
-		encryptedStr[i] = str[i] + n;
-	//	if (str[i] >= 65 &&str[i] <= 90) {
-		//	encryptedStr[i] = str[i] + n;
-			//if (encryptedStr[i] > 90) {
-				//encryptedStr[i] = str[i] + n - 26;
-		//	}
-	//	}
-	//	else if (str[i] >=97 &&str[i] <=122) {
-		//	encryptedStr[i] =str[i] + n;
-			//if (encryptedStr[i] >122) {
-				//encryptedStr[i] = str[i] + n - 26;
-
-		//	}
-	//	}cout << encryptedStr[i];
-		
-	}
-	cout << "\nЗашифрованная строка ";
-	cout<< encryptedStr;
+   
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
