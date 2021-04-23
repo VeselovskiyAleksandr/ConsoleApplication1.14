@@ -24,10 +24,8 @@ int main()
  
      if (mailStr[i] == '@') {
          break;
-     }
-     if (mailStr[i] != '@') {
+     }    
          countSymbolOne++;
-     }
  }
         subStrOne = str_symbol(mailStr, countSymbolOne, 0);
         subStrTwo = str_symbol(mailStr, mailStr.length(), countSymbolOne + 1);
@@ -45,18 +43,19 @@ int main()
 
 string str_symbol(string str, int  countSymbol, int count) {
     char chi;
-    int i, coup=1;
+    int i;
+    bool coup = true;
     string s;
    
 if ((countSymbol-count < 1) || (countSymbol-count > 64)) {//функция разделяет e-mail строку
-    cout << "\n No ";  coup = 0;                          //на две подстроки.  
+    cout << "\n No ";  coup = false;                          //на две подстроки.  
     }   
-if (coup == 1) {
+if (coup == true) {
     for (i = count; i < countSymbol; i++) {
         chi = str[i]; s += chi;
     }
 }
-else if (coup == 0) {
+else if (coup == false) {
     s = "";
 }
 return s;
@@ -67,12 +66,12 @@ int count_symbol(string subStr, string s) {   //функция подсчиты�
     int i;                                    // соответствующих  требуемым
     string strUppercase, strLowerCase, strNumber, strHyphen="-", strPoint=".";
         char chi;
-    for (i = 65; i < 91; i++) {
+    for (i ='A'; i <='Z'; i++) {
         chi = i;
         strUppercase += chi;
         strLowerCase += chi + 32;
     }
-    for (i = 47; i < 58; i++) {
+    for (i ='/'; i <='9'; i++) {
         chi = i;
         strNumber += chi;
     }
