@@ -69,10 +69,7 @@ n = n % 26;
 	return  encryptedStr;
 }
 string decreapt_ceasar(string encryptedStr  , int n) {
-	string decreaptCeasar;
-	n = -n%26;
-	decreaptCeasar =encrypted_Str(encryptedStr,n);
-	return decreaptCeasar;
+	return encrypted_Str(encryptedStr, -n % 26);
  }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
