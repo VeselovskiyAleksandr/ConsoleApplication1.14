@@ -15,19 +15,16 @@ int main() {
     string str0, str1, str2;
     cout << "\nВведите первую строку ";
     cin >> str0;
-   // correct_input(str0);
     cout << "\nВведите вторую строку ";
     cin >> str1;
-    //correct_input(str1);
     cout << "\nВведите третью строку ";
     cin >> str2;
-   // correct_input(str2);
-    countPoint = count_symbol(str0,'.') + count_symbol(str1,'.') + count_symbol(str2,'.');
-    countX = count_symbol(str0,'X') + count_symbol(str1,'X') + count_symbol(str2,'X');
-    countO = count_symbol(str0,'O') + count_symbol(str1,'O') + count_symbol(str2,'O');
- 
-    if ((str1.length() == 3) && (str1.length() == 3) && (str2.length() == 3) &&
-        (countPoint + countX + countO == 9)) {
+    if ((str0.length() == 3) && (str1.length() == 3) && (str2.length() == 3)) {
+        countPoint = count_symbol(str0, '.') + count_symbol(str1, '.') + count_symbol(str2, '.');
+        countX = count_symbol(str0, 'X') + count_symbol(str1, 'X') + count_symbol(str2, 'X');
+        countO = count_symbol(str0, 'O') + count_symbol(str1, 'O') + count_symbol(str2, 'O');
+    }
+    if (countPoint + countX + countO == 9) {
         if ((str0[0] == str1[1]) && (str0[0] == str2[2]) && (str0[0] == 'X')) {
             countXwon++;
         }
