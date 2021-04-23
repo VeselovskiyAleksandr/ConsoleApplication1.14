@@ -19,19 +19,19 @@ int main()
 	for (i = 0; i < str.length(); i++) {
 
 		if (str[i] == ' ') {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No"; correct = false; break; 
 		}
 		else if ((str[0] == '0') && (str[1] == '0')) {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No"; correct = false; break;
 		}
 		else if ((str[i] == '.') && (str[i + 1] == '.')) {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No"; correct = false; break;
 		}
 		else if ((str[i] == '.') && (str[i + 1] == '0') && (str[i + 2] == '0')) {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No";correct = false; break; 
 		}
 		else if (((str[i] < '0') || (str[i] > '9')) && (str[i] != '.')) {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No"; correct = false; break;
 		}
 		else if ((str[i] != '.') && (counter == 0)) {
 			ch = str[i]; str0 += ch;
@@ -49,7 +49,7 @@ int main()
 			counter++;
 		}
 		else if (counter > 3) {
-			cout << "\n No"; break; correct = false;
+			cout << "\n No"; correct = false; break;
 		}
 	}
 		 if ((str0.length()>3)||(str1.length()>3)||(str2.length()>3)||(str3.length()>3)) {
