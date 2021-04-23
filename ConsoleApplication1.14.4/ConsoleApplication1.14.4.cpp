@@ -13,7 +13,6 @@ string absoluteValue_function(string s);
 int main()
 {
     setlocale(LC_ALL, "Russian");
-	int i, j;
     string x, y, u, v, wholePart1, wholePart2, fractionalPart1, fractionalPart2;
     cout << "\n Введите первое число ";
     cin >> x;
@@ -43,6 +42,7 @@ int main()
 					cout << "\n" << x << ">" << y;
 				}
 				else {
+					int i;
 					for (i = 0; i < wholePart1.length(); i++) {
 						if (wholePart1[i] > wholePart2[i]) {
 							cout << "\n" << x << "<" << y; break;
@@ -58,6 +58,7 @@ int main()
 								cout << "\n" << x << ">" << y; break;
 							}
 							else {
+								int j;
 								for (j = 0; j < fractionalPart1.length(); j++) {
 									if (fractionalPart1[j] > fractionalPart2[j]) {
 										cout << "\n" << x << "<" << y; break;
@@ -86,6 +87,7 @@ int main()
 					cout << "\n" << x << "<" << y;
 				}
 				else {
+					int i;
 					for (i = 0; i < wholePart1.length(); i++) {
 						if (wholePart1[i] > wholePart2[i]) {
 							cout << "\n" << x << ">" << y; break;
@@ -101,6 +103,7 @@ int main()
 								cout << "\n" << x << "<" << y; break;
 							}
 							else {
+								int j;
 								for (j = 0; j < fractionalPart1.length(); j++) {
 									if (fractionalPart1[j] > fractionalPart2[j]) {
 										cout << "\n" << x << ">" << y; break;
@@ -130,40 +133,36 @@ int main()
 int checking_correctInput(string number)
 	{
 		setlocale(LC_ALL, "Russian");
-		int i, countNumber = 0, countPoint = 0, countSign=0;
-		int correct=0;
-	//	
-	//	cin >> number;
+		int countNumber = 0, countPoint = 0, countSign=0;
+		bool correct=true;
 		if ((number[0] == '-') || (number[0] == '.') || ((number[0] >= '0') &&( number[0] <= '9'))) {
+			int i;
 			for (i = 0; i < number.length(); i++) {
 				if (number[i] == '.') {
 					countPoint++;
 				}
-				if (number[i] >= '0' && number[i] <= '9') {
+				else if (number[i] >= '0' && number[i] <= '9') {
 					countNumber++;
 				}
+			}
 				if (number[0] == '-') {
-					countSign = 1;
-				}
+					countSign = 1;		
 			}
 if ((countPoint <= 1) &&
 					((countNumber+ countPoint+ countSign)== number.length()))
 				{
-					correct = 1;
+					correct = true;
 				}
-			//	else if (i == number.length() - 1) {
-				//	correct =false;
-				//}
 		}
 		else {
-			correct = 0;
+			correct = false;
 
 		}
          return correct;
 	}
 
 string wholePartSelection_function(string st) {
-int i, j=0, count=0;
+int i, count=0;
 string str;
 char ch;
 if (st[0] == '.') {
@@ -231,11 +230,12 @@ string fractionalPartSelection_function(string st) {
 	return str;
 }
 string discarding_zeros(string s) {
-	int i, j, count=0, t;
+	int count=0, t;
 	char ch;
 	string str;
 	t = s.length(); 
 		if (s[t-1] == '0') {
+			int i;
 			for (i = t-1; i >= 0; i--) { 
 				if (s[i] != '0') { break; }
 				 count++;
@@ -247,7 +247,8 @@ if (t == 0) {
 else if (t == 1) {
 	str = s[0];
 }
-else if (t > 1) {
+else {
+	int j;
 	for (j = 0; j < t; j++) {
 		ch = s[j]; str += ch;
 	}
@@ -256,16 +257,16 @@ else if (t > 1) {
 		return str;
 }
 
-string absoluteValue_function(string str) {
-	int i;
+string absoluteValue_function(string str) {	
 	string s;
 	char ch;
 	if (str[0] == '-') {
+        int i;
 		for (i = 1; i < str.length(); i++) {
 			ch = str[i]; s += ch;
 		}
 	}
-	else if (str[0] != '-') {
+	else {
 		s = str;
 	}
 	return s;
